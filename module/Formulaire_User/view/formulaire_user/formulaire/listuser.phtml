@@ -1,0 +1,33 @@
+﻿<?php
+$title = 'Liste des utilisateurs';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title);?></h1>
+<p>
+	<a href="
+	<?php echo $this->url('user', array('action'=>'adduser'));?>">Ajouter un nouvel utilisateur</a>
+</p>
+<table class="table">
+	<tr>
+		<th>Nom</th>
+		<th>Prénom</th>
+		<th>Civilité</th>
+		<th>Mail</th>
+		<th>Mot de passe</th>
+		<th>&nbsp;</th>
+	</tr>
+<?php foreach ($users as $user): ?>
+<tr>
+		<td><?php echo $this->escapeHtml($user->user_surname);?></td>
+		<td><?php echo $this->escapeHtml($user->user_fisrt_name);?></td>
+		<td><?php echo $this->escapeHtml($user->user_civility);?></td>
+		<td><?php echo $this->escapeHtml($user->user_mail);?></td>
+		<td><?php echo $this->escapeHtml($user->user_password);?></td>
+		<td><a
+			href="<?php echo $this->url('user', array('action'=>'edituser','user_id'=>$user->user_id));?>">Modifier</a>
+			<a
+			href="<?php echo $this->url('user', array('action'=>'deleteuser','user_id'=>$user->user_id));?>">Supprimer</a>
+		</td>
+	</tr>
+<?php endforeach;?>
+</table>

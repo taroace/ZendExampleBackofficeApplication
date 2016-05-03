@@ -1,0 +1,26 @@
+﻿<?php
+// module/User/view/user/user/delete.phtml:
+$title = 'Suppression utilisateur';
+$this->headtitle($title);
+
+?>
+
+<h1><?php echo $this->escapehtml($title);?></h1>
+<p>Voulez vous vraiment supprimer l'utilisateur
+    '<?php echo $this->escapehtml($user->user_surname);?> 
+    <?php echo $this->escapehtml($user->user_fisrt_name);?>' ?
+</p>
+<?php
+$url = $this->url('user', array(
+    'action' => 'deleteuser',
+    'user_id' => $this->user_id
+));
+?>
+
+<form action="<?php echo $url; ?> " method="post">
+	<div>
+		<input type="hidden" name="user_id"
+			value="<?php echo (int) $user->user_id;?>" /> <input type="submit"
+			name="del" value="Oui" /> <input type="submit" name="del" value="Non" />
+	</div>
+</form>

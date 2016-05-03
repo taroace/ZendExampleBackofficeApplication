@@ -1,0 +1,99 @@
+﻿<?php
+$title = 'Ajout d\'un client';
+$this->headTitle($title);
+?>
+
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('customer', array(
+    'action' => 'addcustomer'
+)));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<table>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_name'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_name'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_name'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_company_number'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_company_number'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_company_number'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_validate'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_validate'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_validate'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_number'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_number'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_number'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_telephone'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_telephone'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_telephone'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_fax'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_fax'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_fax'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_address'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_address'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_address'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_zipcode'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_zipcode'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_zipcode'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_city'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_city'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_city'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_country'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_country'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_country'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_type'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_type'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_type'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_logo_path'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_logo_path'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_logo_path'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('customer_folder_path'))?></td>
+		<td><?php echo $this->formelement($form->get('customer_folder_path'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('customer_folder_path'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('admin_id'))?></td>
+		<td><?php echo $this->formelement($form->get('admin_id'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('admin_id'))?></td>
+	</tr>
+	<tr>
+		<td><?php echo $this->formlabel($form->get('commercial_id'))?></td>
+		<td><?php echo $this->formelement($form->get('commercial_id'))?></td>
+		<td><?php echo $this->formelementerrors($form->get('commercial_id'))?></td>
+	</tr>
+</table>
+<?php echo $this->formelement($form->get('submit'))?>
+
+
+
+<?php
+echo $this->form()->closeTag();
+?>
